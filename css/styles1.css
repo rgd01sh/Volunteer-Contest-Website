@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: url("assets/cursor.png") 16 16, auto; /* Custom cursor */
+}
+
+.svg-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.cloud,
+.cloud2,
+.bird1,
+.bird2,
+.girl1,
+.boy1,
+.title,
+.button {
+  position: absolute;
+}
+
+.cloud {
+  bottom: 10%;
+  left: 0;
+  width: 100vw;
+  animation: rise 1s linear forwards;
+}
+
+.cloud2 {
+  top: -30%;
+  left: -20%;
+  width: 120vw;
+  animation: dropCloud 1s linear forwards;
+}
+
+.bird1 {
+  top: 10%;
+  left: 10%;
+  width: 110vw;
+  animation: drop 1s ease-in-out forwards;
+}
+
+.bird2 {
+  top: 20%;
+  left: -20%;
+  width: 110vw;
+  animation: drop 1s ease-in-out forwards;
+}
+
+.girl1 {
+  bottom: 0;
+  left: -15%;
+  width: 135vw;
+  animation: rise 1s ease-in-out forwards;
+}
+
+.boy1 {
+  bottom: 0;
+  right: -45%;
+  width: 125vw;
+  animation: rise 1s ease-in-out forwards;
+}
+
+.title {
+  top: 15%; /* Maintain the top position */
+  width: 90vw; /* Make the title width responsive */
+  max-width: 600px; /* Set a max width for the title */
+  animation: popIn 1.5s ease forwards;
+  text-align: center;
+}
+
+.button {
+  top: -5%; /* Keep top position to allow for visual separation */
+  width: 90vw; /* Make the button width responsive */
+  max-width: 580px; /* Set a max width for the button */
+  height: auto; /* Maintain aspect ratio */
+  animation: showButton 1.5s ease forwards;
+  border: none; /* Remove border */
+  background: transparent; /* Transparent background */
+  cursor: pointer; /* Custom cursor */
+  display: flex; /* Use flex to center the SVG */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0 auto; /* Center the button */
+}
+
+.button img {
+  width: 100%; /* Makes the SVG scale with the button */
+  height: auto; /* Maintain aspect ratio of the SVG */
+}
+
+/* Keyframes */
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes showButton {
+  0% {
+    opacity: 0;
+    bottom: -20%;
+  }
+  100% {
+    opacity: 1;
+    bottom: 5%;
+  }
+}
+
+@keyframes rise {
+  0% {
+    bottom: -20%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -50%; /* Adjust this based on your needs */
+    opacity: 1; /* Start visible */
+  }
+  100% {
+    top: -5%; /* End position */
+    opacity: 1; /* Stay visible */
+  }
+}
+
+@keyframes dropCloud {
+  0% {
+    top: -30%;
+    opacity: 0;
+  }
+  100% {
+    top: 10%;
+    opacity: 1;
+  }
+}
